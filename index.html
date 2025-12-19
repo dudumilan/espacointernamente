@@ -25,10 +25,10 @@ body{
 }
 
 section{
-    padding: 100px 0;
+    padding: 90px 0;
 }
 
-h1, h2, h3, h4{
+h1, h2, h3{
     font-family: 'Playfair Display', serif;
 }
 
@@ -50,8 +50,8 @@ h1, h2, h3, h4{
 }
 
 .hero{
-    height: 100vh;
-    background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)),
+    min-height: 100vh;
+    background: linear-gradient(rgba(255,255,255,0.92), rgba(255,255,255,0.92)),
                 url('https://images.unsplash.com/photo-1521791136064-7986c2920216') center/cover;
     display: flex;
     align-items: center;
@@ -59,12 +59,12 @@ h1, h2, h3, h4{
 }
 
 .hero h1{
-    font-size: 3.2rem;
+    font-size: 3rem;
     color: var(--gold);
 }
 
 .hero p{
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     max-width: 700px;
     margin: auto;
 }
@@ -74,8 +74,9 @@ h1, h2, h3, h4{
     padding: 30px;
     height: 100%;
     background: var(--light);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.06);
     border-top: 4px solid var(--gold);
+    border-radius: 12px;
 }
 
 .card-gold h5{
@@ -101,8 +102,8 @@ h1, h2, h3, h4{
 
 .profissional-img{
     width: 100%;
-    max-width: 350px;
-    border-radius: 12px;
+    max-width: 340px;
+    border-radius: 14px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
@@ -122,7 +123,21 @@ h1, h2, h3, h4{
 
 .btn-gold:hover{
     background: var(--gold-dark);
-    color: var(--white);
+}
+
+.map-box{
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+@media (max-width: 768px){
+    section{
+        padding: 70px 20px;
+    }
+    .hero h1{
+        font-size: 2.2rem;
+    }
 }
 </style>
 </head>
@@ -131,7 +146,7 @@ h1, h2, h3, h4{
 <nav class="navbar navbar-expand-lg fixed-top shadow-sm">
 <div class="container">
     <a class="navbar-brand" href="#inicio">
-        <img src="logo.png" alt="Logo - Rita Temporin">
+        <img src="/imagens/logo.png" alt="Logo Rita Temporin">
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
         <span class="navbar-toggler-icon"></span>
@@ -140,9 +155,8 @@ h1, h2, h3, h4{
         <ul class="navbar-nav ms-auto">
             <li class="nav-item"><a class="nav-link" href="#inicio">Início</a></li>
             <li class="nav-item"><a class="nav-link" href="#atuacao">Atuação</a></li>
-            <li class="nav-item"><a class="nav-link" href="#profissional">A Profissional</a></li>
-            <li class="nav-item"><a class="nav-link" href="#porque">Diferenciais</a></li>
-            <li class="nav-item"><a class="nav-link" href="#consultas">Consultas</a></li>
+            <li class="nav-item"><a class="nav-link" href="#profissional">Profissional</a></li>
+            <li class="nav-item"><a class="nav-link" href="#localizacao">Localização</a></li>
             <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
         </ul>
     </div>
@@ -167,10 +181,49 @@ h1, h2, h3, h4{
     </div>
 
     <div class="row g-4">
-        <div class="col-md-6 col-lg-3"><div class="card-gold"><h5>Avaliação</h5><p>Avaliação neuropsicopedagógica completa.</p></div></div>
-        <div class="col-md-6 col-lg-3"><div class="card-gold"><h5>Intervenção</h5><p>Planos personalizados para cada paciente.</p></div></div>
-        <div class="col-md-6 col-lg-3"><div class="card-gold"><h5>Aprendizagem</h5><p>Dificuldades de leitura, escrita e matemática.</p></div></div>
-        <div class="col-md-6 col-lg-3"><div class="card-gold"><h5>Emocional</h5><p>Autorregulação e desenvolvimento socioemocional.</p></div></div>
+        <div class="col-md-6 col-lg-3">
+            <div class="card-gold">
+                <h5>Avaliação Neuropsicopedagógica</h5>
+                <p>
+                    Avaliação detalhada do desenvolvimento cognitivo, emocional e
+                    educacional, considerando atenção, memória, linguagem, funções
+                    executivas e desempenho escolar, com olhar individual para cada paciente.
+                </p>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+            <div class="card-gold">
+                <h5>Intervenção Individualizada</h5>
+                <p>
+                    Elaboração de planos de intervenção personalizados, respeitando
+                    o ritmo, as necessidades e os objetivos de cada paciente,
+                    promovendo avanços reais e consistentes no processo de aprendizagem.
+                </p>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+            <div class="card-gold">
+                <h5>Dificuldades de Aprendizagem</h5>
+                <p>
+                    Atendimento voltado para dificuldades em leitura, escrita,
+                    interpretação, matemática e organização dos estudos,
+                    auxiliando na construção de estratégias mais eficazes para aprender.
+                </p>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+            <div class="card-gold">
+                <h5>Aspectos Emocionais</h5>
+                <p>
+                    Trabalho com autorregulação emocional, autoestima,
+                    habilidades sociais e manejo das emoções,
+                    favorecendo o bem-estar e o desenvolvimento integral do paciente.
+                </p>
+            </div>
+        </div>
     </div>
 </div>
 </section>
@@ -184,60 +237,45 @@ h1, h2, h3, h4{
 
     <div class="row align-items-center g-5">
         <div class="col-md-5 text-center">
-            <img src="profissional.jpg" alt="Foto da profissional" class="profissional-img">
+            <img src="/imagens/profissional.png" class="profissional-img" alt="Foto profissional">
         </div>
         <div class="col-md-7">
             <h3>Rita Temporin</h3>
             <p><strong>Neuropsicopedagoga</strong></p>
-            <p>
-                Profissional com atuação focada no desenvolvimento cognitivo,
-                emocional e educacional, oferecendo atendimento humanizado,
-                individualizado e baseado em evidências científicas.
-            </p>
-            <p>
-                O trabalho é conduzido com escuta ativa, respeito ao tempo de
-                cada paciente e parceria constante com a família.
-            </p>
+            <p>Atendimento humanizado, individualizado e baseado em evidências.</p>
         </div>
     </div>
 </div>
 </section>
 
-<section id="porque">
+<section id="localizacao">
 <div class="container">
     <div class="section-title">
-        <h2>Diferenciais</h2>
+        <h2>Localização</h2>
         <span></span>
     </div>
 
-    <div class="row g-4">
-        <div class="col-md-4"><div class="card-gold">Atendimento individualizado</div></div>
-        <div class="col-md-4"><div class="card-gold">Olhar clínico e humano</div></div>
-        <div class="col-md-4"><div class="card-gold">Ambiente seguro e acolhedor</div></div>
-        <div class="col-md-4"><div class="card-gold">Experiência em aprendizagem</div></div>
-        <div class="col-md-4"><div class="card-gold">Comunicação com a família</div></div>
-        <div class="col-md-4"><div class="card-gold">Metodologia baseada em evidências</div></div>
+    <div class="row g-4 align-items-center">
+        <div class="col-md-5">
+            <div class="card-gold">
+                <h5>Endereço</h5>
+                <p>
+                    Rua Aparecida, nº 405<br>
+                    Santa Rosália – Sorocaba/SP<br>
+                    Andar de cima<br>
+                    CEP 18090-692
+                </p>
+            </div>
+        </div>
+        <div class="col-md-7">
+            <div class="map-box">
+                <iframe
+                    src="https://www.google.com/maps?q=Rua%20Aparecida%20405%20Santa%20Ros%C3%A1lia%20Sorocaba%20SP&output=embed"
+                    width="100%" height="350" style="border:0;" loading="lazy">
+                </iframe>
+            </div>
+        </div>
     </div>
-</div>
-</section>
-
-<section id="consultas">
-<div class="container">
-    <div class="section-title">
-        <h2>Diferenciais</h2>
-        <span></span>
-    </div>
-
-    <div class="row g-4">
-        <div class="col-md-4"><div class="card-gold">Atendimento individualizado</div></div>
-        <div class="col-md-4"><div class="card-gold">Olhar clínico e humano ao mesmo tempo</div></div>
-        <div class="col-md-4"><div class="card-gold">Ambiente seguro e acolhedor</div></div>
-        <div class="col-md-4"><div class="card-gold">Experiência ampla em dificuldades de aprendizagem</div></div>
-        <div class="col-md-4"><div class="card-gold">Comunicação transparente com a família</div></div>
-        <div class="col-md-4"><div class="card-gold">Metodologia baseada em evidências</div></div>
-        <div class="col-md-4"><div class="card-gold">Intervenções práticas que funcionam</div></div>
-        <div class="col-md-4"><div class="card-gold">Compromisso verdadeiro com o desenvolvimento do paciente</div></div>
-
 </div>
 </section>
 
