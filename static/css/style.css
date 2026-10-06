@@ -128,3 +128,28 @@ h1,h2,h3{
         font-size:2.2rem;
     }
 }
+.card-gold {
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.card-gold:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.profissional-img {
+    transition: transform 0.4s ease;
+}
+
+.profissional-img:hover {
+    transform: scale(1.04);
+}
+
+.animate-button {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.animate-button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
