@@ -27,6 +27,11 @@ h1,h2,h3{
 
 .navbar-brand img{
     height:50px;
+    transition:transform 0.3s ease;
+}
+
+.navbar-brand:hover img{
+    transform:scale(1.04);
 }
 
 .nav-link{
@@ -40,8 +45,9 @@ h1,h2,h3{
 
 .hero{
     min-height:100vh;
-    background:linear-gradient(rgba(255,255,255,0.92),rgba(255,255,255,0.92)),
-    url('https://images.unsplash.com/photo-1521791136064-7986c2920216') center/cover;
+    background:
+        linear-gradient(rgba(255,255,255,0.92),rgba(255,255,255,0.92)),
+        url('https://images.unsplash.com/photo-1521791136064-7986c2920216') center/cover;
     display:flex;
     align-items:center;
     text-align:center;
@@ -66,6 +72,12 @@ h1,h2,h3{
     box-shadow:0 10px 25px rgba(0,0,0,0.06);
     border-top:4px solid var(--gold);
     border-radius:12px;
+    transition:transform 0.35s ease,box-shadow 0.35s ease;
+}
+
+.card-gold:hover{
+    transform:translateY(-8px);
+    box-shadow:0 12px 25px rgba(0,0,0,0.15);
 }
 
 .card-gold h5{
@@ -75,6 +87,11 @@ h1,h2,h3{
 .section-title{
     text-align:center;
     margin-bottom:60px;
+    transition:transform 0.3s ease;
+}
+
+.section-title:hover{
+    transform:translateY(-2px);
 }
 
 .section-title h2{
@@ -94,6 +111,11 @@ h1,h2,h3{
     max-width:340px;
     border-radius:14px;
     box-shadow:0 10px 25px rgba(0,0,0,0.15);
+    transition:transform 0.4s ease;
+}
+
+.profissional-img:hover{
+    transform:scale(1.04);
 }
 
 .contact{
@@ -108,10 +130,14 @@ h1,h2,h3{
     border-radius:50px;
     font-weight:500;
     border:none;
+    transition:transform 0.3s ease,box-shadow 0.3s ease,background 0.3s ease;
 }
 
 .btn-gold:hover{
     background:var(--gold-dark);
+    color:var(--white);
+    transform:translateY(-4px);
+    box-shadow:0 8px 20px rgba(0,0,0,0.15);
 }
 
 .map-box{
@@ -120,36 +146,54 @@ h1,h2,h3{
     box-shadow:0 10px 25px rgba(0,0,0,0.15);
 }
 
+.animate-hero-title{
+    opacity:0;
+    transform:translateY(50px);
+}
+
+.animate-hero-text{
+    opacity:0;
+    transform:translateY(40px);
+}
+
+.animate-section{
+    opacity:0;
+    transform:translateY(60px);
+}
+
+.animate-card{
+    opacity:0;
+    transform:translateY(60px);
+}
+
 @media(max-width:768px){
     section{
         padding:70px 20px;
     }
+
     .hero h1{
         font-size:2.2rem;
     }
-}
-.card-gold {
-    transition: transform 0.35s ease, box-shadow 0.35s ease;
+
+    .navbar-brand img{
+        height:60px;
+    }
 }
 
-.card-gold:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
-}
+@media(prefers-reduced-motion:reduce){
+    .animate-hero-title,
+    .animate-hero-text,
+    .animate-section,
+    .animate-card{
+        opacity:1;
+        transform:none;
+    }
 
-.profissional-img {
-    transition: transform 0.4s ease;
-}
-
-.profissional-img:hover {
-    transform: scale(1.04);
-}
-
-.animate-button {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.animate-button:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    .card-gold,
+    .profissional-img,
+    .btn-gold,
+    .section-title,
+    .navbar-brand img{
+        transition:none;
+    }
 }
