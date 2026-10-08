@@ -63,6 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
         card.style.transitionDelay = `${(index % 4) * 0.15}s`;
     });
 });
+
 document.addEventListener("DOMContentLoaded", () => {
     const banner = document.getElementById("cookie-banner");
     const accept = document.getElementById("cookie-accept");
