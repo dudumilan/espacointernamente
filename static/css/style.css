@@ -197,3 +197,65 @@ h1,h2,h3{
         transition:none;
     }
 }
+#cookie-banner{
+    position:fixed;
+    bottom:20px;
+    left:20px;
+    right:20px;
+    z-index:9999;
+    background:#ffffff;
+    padding:20px 25px;
+    border-radius:12px;
+    box-shadow:0 8px 30px rgba(0,0,0,0.18);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+}
+
+#cookie-banner strong{
+    color:var(--gold-dark);
+    font-size:18px;
+}
+
+#cookie-banner p{
+    margin:5px 0 0;
+    font-size:14px;
+}
+
+.cookie-buttons{
+    display:flex;
+    gap:10px;
+    flex-shrink:0;
+}
+
+.cookie-buttons button{
+    border:none;
+    padding:10px 20px;
+    border-radius:25px;
+    cursor:pointer;
+}
+
+#cookie-reject{
+    background:#eeeeee;
+    color:#333333;
+}
+
+#cookie-accept{
+    background:var(--gold);
+    color:#ffffff;
+}
+
+@media(max-width:768px){
+    #cookie-banner{
+        flex-direction:column;
+        align-items:stretch;
+        bottom:10px;
+        left:10px;
+        right:10px;
+    }
+
+    .cookie-buttons{
+        justify-content:flex-end;
+    }
+}
