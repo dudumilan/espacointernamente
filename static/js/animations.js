@@ -63,3 +63,43 @@ document.addEventListener("DOMContentLoaded", () => {
         card.style.transitionDelay = `${(index % 4) * 0.15}s`;
     });
 });
+document.addEventListener("DOMContentLoaded", () => {
+    const banner = document.getElementById("cookie-banner");
+    const accept = document.getElementById("cookie-accept");
+    const reject = document.getElementById("cookie-reject");
+
+    if (!banner || !accept || !reject) {
+        return;
+    }
+
+    const savedConsent = localStorage.getItem("cookieConsent");
+
+    if (savedConsent) {
+        banner.style.display = "none";
+        return;
+    }
+
+    accept.addEventListener("click", () => {
+        gtag("consent", "update", {
+            ad_storage: "granted",
+            analytics_storage: "granted",
+            ad_user_data: "granted",
+            ad_personalization: "granted"
+        });
+
+        localStorage.setItem("cookieConsent", "accepted");
+        banner.style.display = "none";
+    });
+
+    reject.addEventListener("click", () => {
+        gtag("consent", "update", {
+            ad_storage: "denied",
+            analytics_storage: "denied",
+            ad_user_data: "denied",
+            ad_personalization: "denied"
+        });
+
+        localStorage.setItem("cookieConsent", "rejected");
+        banner.style.display = "none";
+    });
+});
