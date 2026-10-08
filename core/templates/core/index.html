@@ -315,41 +315,51 @@ function gtag_report_conversion(url) {
     </div>
 </div>
 
+<div id="cookie-banner">
+    <div>
+        <strong>Privacidade e cookies</strong>
+        <p>Utilizamos tecnologias para melhorar sua experiência e medir os resultados do site.</p>
+    </div>
+
+    <div class="cookie-buttons">
+        <button type="button" id="cookie-reject">Recusar</button>
+        <button type="button" id="cookie-accept">Aceitar</button>
+    </div>
+</div>
+
 <script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const banner = document.getElementById("cookie-banner");
-        const accept = document.getElementById("cookie-accept");
-        const reject = document.getElementById("cookie-reject");
+    const cookieBanner = document.getElementById("cookie-banner");
+    const cookieAccept = document.getElementById("cookie-accept");
+    const cookieReject = document.getElementById("cookie-reject");
 
-        const consent = localStorage.getItem("cookieConsent");
+    const savedConsent = localStorage.getItem("cookieConsent");
 
-        if (consent) {
-            banner.style.display = "none";
-        }
+    if (savedConsent) {
+        cookieBanner.style.display = "none";
+    }
 
-        accept.addEventListener("click", () => {
-            gtag("consent", "update", {
-                "ad_storage": "granted",
-                "ad_user_data": "granted",
-                "ad_personalization": "granted",
-                "analytics_storage": "granted"
-            });
-
-            localStorage.setItem("cookieConsent", "accepted");
-            banner.style.display = "none";
+    cookieAccept.addEventListener("click", function() {
+        gtag("consent", "update", {
+            ad_storage: "granted",
+            analytics_storage: "granted",
+            ad_user_data: "granted",
+            ad_personalization: "granted"
         });
 
-        reject.addEventListener("click", () => {
-            gtag("consent", "update", {
-                "ad_storage": "denied",
-                "ad_user_data": "denied",
-                "ad_personalization": "denied",
-                "analytics_storage": "denied"
-            });
+        localStorage.setItem("cookieConsent", "accepted");
+        cookieBanner.style.display = "none";
+    });
 
-            localStorage.setItem("cookieConsent", "rejected");
-            banner.style.display = "none";
+    cookieReject.addEventListener("click", function() {
+        gtag("consent", "update", {
+            ad_storage: "denied",
+            analytics_storage: "denied",
+            ad_user_data: "denied",
+            ad_personalization: "denied"
         });
+
+        localStorage.setItem("cookieConsent", "rejected");
+        cookieBanner.style.display = "none";
     });
 </script>
 </body>
