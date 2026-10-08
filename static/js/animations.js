@@ -75,7 +75,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const savedConsent = localStorage.getItem("cookieConsent");
 
-    if (savedConsent) {
+    if (savedConsent === "accepted") {
+        gtag("consent", "update", {
+            ad_storage: "granted",
+            analytics_storage: "granted",
+            ad_user_data: "granted",
+            ad_personalization: "granted"
+        });
+
+        banner.style.display = "none";
+        return;
+    }
+
+    if (savedConsent === "rejected") {
+        gtag("consent", "update", {
+            ad_storage: "denied",
+            analytics_storage: "denied",
+            ad_user_data: "denied",
+            ad_personalization: "denied"
+        });
+
         banner.style.display = "none";
         return;
     }
@@ -103,4 +122,4 @@ document.addEventListener("DOMContentLoaded", () => {
         localStorage.setItem("cookieConsent", "rejected");
         banner.style.display = "none";
     });
-});
+}); 
