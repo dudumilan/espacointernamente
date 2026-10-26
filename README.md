@@ -11,7 +11,7 @@ Projeto desenvolvido com Django para publicação de artigos.
 ## 🛠️ Tecnologias
 - Python
 - Django
-- HTML/CSS
+- HTML/CSS/JS
 
 ## 🌍 Acesse o projeto
 https://espacointernamente.onrender.com
